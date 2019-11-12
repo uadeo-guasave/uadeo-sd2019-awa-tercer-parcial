@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Segundo_Parcial.Models
 {
@@ -32,9 +33,16 @@ namespace Segundo_Parcial.Models
         public string EscuelaDeProcedencia { get; set; }
 
         [Required, MaxLength(200)]
-        public string CorreoElectronico { get; set; }
+        public string CorreoElectronicoPersonal { get; set; }
 
         [Required, MaxLength(20)]
         public string Telefono { get; set; }
+
+        [Required]
+        public int UsuarioId { get; set; }
+
+
+        [NotMapped]
+        public Usuario Usuario { get; set; }
     }
 }
